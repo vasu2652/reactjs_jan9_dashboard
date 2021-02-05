@@ -1,0 +1,46 @@
+How to split application into components.
+
+How to deal with a component when it is coming onto browser window(Before painting this particular we have whole control over this component) -> LifeCycles
+
+What is a component State ( state)
+
+State(Owned by You (degre/ur name)) vs Props((something u got from your parents) surname) immutable
+
+How to interact with other components -> 
+
+Types of interactions
+
+1.Parent -> Child(props)
+2.Child -> Parent(events) 
+(When child component is clicked,(some event in child should change data in parent)
+    1. You define a function in parent component ( Function definition is in parent component( you can modify state in parent, you can receive arguments from child ( data))) 
+    2. You pass that function reference to child component( you never call that function from parent)
+    3. When something changes in child -> (We call/execute the function passed by parent)
+ )
+3.Child -> Child (siblings)(combination 1 & 2) 
+
+State in Parent()
+
+Forms ( No web application without a form )
+Controlled component 
+
+Either you append a new element (1,2,3,5(100 users)) -> (1,2,3,4) ->
+Either you delete a new element (1,2,4),(1,2,4)
+
+Either you completely get a new data
+7042652555->"Processing Pharma Transaction with payload"->{"orderDetails":{"apOrderNo":null,"referenceNo":"2021012502839","appointmentId":null,"coupon":"SAVEBIG","currentStatus":"OUT_FOR_DELIVERY","createdDate":"2021-01-25T16:10:36.275Z","devliveryCharges":"0.00","packagingCharges":0,"deliveryType":"HOME_DELIVERY","bookingSource":"MOBILE","deviceType":"IOS","appVersion":"5.3.1","estimatedAmount":"7149.00","id":"409efc01-e113-4499-8d62-27d589afaffc","isEprescription":0,"orderAutoId":"247772005","orderType":"CART_ORDER","orderDateTime":"2021-01-26T05:22:42.000Z","orderTat":"26-Jan-2021 21:00","prescriptionOptionSelected":null,"oldOrderTat":null,"patientAddressId":"265f026d-8b41-4432-bf9a-c6c7340b7205","prescriptionImageUrl":"","prismPrescriptionFileId":"","showPrescriptionAtStore":false,"quoteDateTime":"2021-01-25T16:10:36.273Z","quoteId":null,"siteId":null,"tatType":"LVDC","shopId":"11436","couponDiscount":1,"productDiscount":0,"shopAddress":"null","alertStore":false,"paymentInfo":{"id":"6ca45127-6026-48b9-ab9a-322723a0ecab","bankName":"HDFC Bank","bankTxnId":"70312407799","amountPaid":7149,"createdDate":"2021-01-25T16:11:30.063Z","partnerInfo":null,"paymentMode":"CREDIT_CARD","paymentType":"CASHLESS","updatedDate":"2021-01-25T16:11:30.041Z","paymentRefId":"20210125111212800110168266377195497","refundAmount":null,"responseCode":"01","paymentStatus":"TXN_SUCCESS","paymentDateTime":"2021-01-25T16:10:37.000Z","responseMessage":"Txn Success","healthCreditsRedeemed":"0.00","healthCreditsRedemptionRequest":{}​},"customerComment":null,"isOmsOrder":true,"clusterId":"DEFAULT","patientId":"44489577-781c-4485-969d-981ef4873865","allocationProfileName":"del1","storeDistanceKm":null,"amountBreakUp":{"couponCode":"SAVEBIG","actual_price":7150,"planValidity":"","couponApplied":true,"totalCashBack":0,"plansPurchased":false,"coupon_discount":1,"delivery_charge":0,"final_paid_amount":7149,"health_credit_used":0},"updatedDate":"2021-01-25T16:10:36.260Z","medicineOrderAddress":{"id":"8e119cd8-6a72-4875-aa27-b96878672225","name":"Manish Kumar","mobileNumber":"7042652555","addressLine1":"502, IN 1","addressLine2":"Eldeco Amantran, Sector 119, Noida","addressType":"OTHER","city":"Noida","otherAddressType":"Eldeco","state":"Uttar Pradesh","zipcode":"201307","landmark":"","latitude":28.5876327572787,"longitude":77.4048403611637,"stateCode":"UP","createdDate":"2021-01-25T16:10:36.301Z","updatedDate":null},"medicineOrderPayments":[{"amountPaid":"7149.00","refundAmount":null,"bankTxnId":"70312407799","bankName":"HDFC Bank","createdDate":"2021-01-25T16:11:30.063Z","id":"6ca45127-6026-48b9-ab9a-322723a0ecab","paymentType":"CASHLESS","paymentMode":"CREDIT_CARD","paymentRefId":"20210125111212800110168266377195497","paymentDateTime":"2021-01-25T16:10:37.000Z","paymentStatus":"TXN_SUCCESS","responseCode":"01","responseMessage":"Txn Success","partnerInfo":null,"healthCreditsRedemptionRequest":{},"healthCreditsRedeemed":"0.00","updatedDate":"2021-01-25T16:11:30.041Z"}],"medicineOrderShipments":[{"createdDate":"2021-01-25T16:12:29.750Z","id":"5dc8dac2-179f-46cc-8e2b-666978ef4aed","apOrderNo":"FL20210125002600","siteId":"11436","siteName":"GREATER NOIDA GAUR CITY","trackingNo":"APF00296977","trackingUrl":"","trackingProvider":"Apollo Fleet","cancelReasonCode":null,"currentStatus":"OUT_FOR_DELIVERY","oneApolloTransaction":{},"updatedDate":"2021-01-25T16:12:29.728Z","itemDetails":"[{\"articleCode\":\"APT0053\",\"articleName\":\"Aptamil Stage 2 Refill 400g\",\"quantity\":10,\"batch\":\"\",\"unitPrice\":715,\"packSize\":1,\"mrp\":715}]","driverDetails":{"driverName":"RI00415-deepak.gaur","driverPhone":"9958263637"},"medicineOrdersStatus":[{"createdDate":"2021-01-26T05:26:51.823Z","orderStatus":"OUT_FOR_DELIVERY","hideStatus":true,"id":"ab90d1ba-f29f-477e-b7f5-fb3107598e4d","statusDate":"2021-01-26T05:22:42.000Z","statusMessage":"","customReason":null,"updatedDate":"2021-01-26T05:26:51.818Z"},{"createdDate":"2021-01-26T05:26:06.876Z","orderStatus":"SHIPPED","hideStatus":true,"id":"d6b2bbea-d79a-4a3f-9151-7682797484b1","statusDate":"2021-01-26T05:22:42.000Z","statusMessage":"","customReason":null,"updatedDate":"2021-01-26T05:26:06.865Z"},{"createdDate":"2021-01-26T03:56:37.463Z","orderStatus":"READY_TO_SHIP","hideStatus":true,"id":"8b5a2fb9-b1aa-457e-924d-72ecc85165e1","statusDate":"2021-01-26T03:55:40.000Z","statusMessage":"","customReason":null,"updatedDate":"2021-01-26T03:56:37.440Z"},{"createdDate":"2021-01-26T03:50:22.872Z","orderStatus":"ORDER_BILLED","hideStatus":true,"id":"4fbaf39d-47e1-454a-8f8a-42b115233256","statusDate":"2021-01-26T03:49:36.000Z","statusMessage":null,"customReason":null,"updatedDate":"2021-01-26T03:50:22.847Z"},{"createdDate":"2021-01-25T16:12:30.302Z","orderStatus":"ORDER_VERIFIED","hideStatus":true,"id":"1284d931-5c91-4366-a895-c2470527951f","statusDate":"2021-01-25T16:12:28.577Z","statusMessage":null,"customReason":null,"updatedDate":"2021-01-25T16:12:30.291Z"},{"createdDate":"2021-01-25T16:12:29.758Z","orderStatus":"ORDER_PLACED","hideStatus":true,"id":"1867d00b-9c42-4869-bc9a-9fdc085f467c","statusDate":"2021-01-25T16:11:32.006Z","statusMessage":null,"customReason":null,"updatedDate":"2021-01-25T16:12:29.744Z"}]}]},"patient":{"firstName":"Manish","lastName":"Kumar","mobileNumber":"+917042652555","dateOfBirth":"1982-11-25","emailAddress":"manish.srivastwa@gmail.com","partnerId":null,"id":"44489577-781c-4485-969d-981ef4873865","uhid":"APJ1.0006750535","primaryPatientId":"44489577-781c-4485-969d-981ef4873865"},"mobileNumber":"7042652555","orderNumber":"FL20210125002600","invoiceDetails":[{"billDetails":"{\"billDateTime\":\"2021-01-26T03:49:36.000Z\",\"billNumber\":\"DS0001639\",\"invoiceValue\":7149.28,\"cashValue\":0.28,\"prepaidValue\":7149,\"discountValue\":0.72,\"deliveryCharges\":0}","itemDetails":"[{\"itemId\":\"APT0053\",\"itemName\":\"APTAMIL STAGE 2 400G REFILL\",\"batchId\":\"2006096911/H\",\"issuedQty\":5,\"mou\":1,\"discountPrice\":0.072,\"mrp\":715},{\"itemId\":\"APT0053\",\"itemName\":\"APTAMIL STAGE 2 400G REFILL\",\"batchId\":\"2007066911/H\",\"issuedQty\":4,\"mou\":1,\"discountPrice\":0.0725,\"mrp\":715},{\"itemId\":\"APT0053\",\"itemName\":\"APTAMIL STAGE 2 400G REFILL\",\"batchId\":\"2009166911/2\",\"issuedQty\":1,\"mou\":1,\"discountPrice\":0.07,\"mrp\":715}]"}]}
+
+
+Material-UI 
+react-router-dom
+
+Context -> Has a DataProvider{json/ state_container} / a Dataconsumer { components} / DataChanger
+
+Named Exports -> Can be multiple
+
+Default Exports -> Can be only one per file
+
+
+
+REACT
+
