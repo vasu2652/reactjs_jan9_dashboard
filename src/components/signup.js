@@ -89,7 +89,6 @@ export default function SignUp() {
         password: ""
       });
     });
-
   }
   const validations=(element)=>{
     switch(element){

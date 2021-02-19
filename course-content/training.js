@@ -25,11 +25,60 @@ class ClassComponent extends React.Component{
 }
 
 
-function FunctionalComponent1(props) {
+export function WrapperFunctionalComponent1(props) {
+  const [data ,setData] = useState({
+    CD: ["Vasudev","Siva","Bhanu","Shashi"],
+      FD: ["IronMan","Captain America","Hulk","Thor"],
+      //if it is true I will display CD, if it is false I will loop FD
+      value: 'Vasudev',
+      type: 'CD'
+  });
+  const handleOnClick=()=>{
+    setData((prevState)=>{
+      return {
+        ...prevState,
+        login:!prevState.login
+      }
+    }
+    )
+  }
+
+  const handleChangeInput=(e)=>{
+    console.log(e,e.target.value)
+    setData({
+      ...prevState,
+      value:e.target.value
+    })
+  }
+
+  const handleChangeCheckbox= (e)=>{
+    console.log(e.target.value, "checkbox");
+    setData({
+      ...prevState,
+      type: e.target.value
+    })
+  }
+
   return (
-    <ul>
-      {props?.FD?.map((ele,index)=><li key={index}>{ele}</li>)}
-    </ul>
+    <>
+      <form onSubmit={handleSubmit}>
+      <label>
+        Add:
+        <input type="text" value={data.value} onChange={handleChangeInput} />
+      </label>
+      <label>
+        Type:
+        <select value={data.type} onChange={handleChangeCheckbox}>
+          <option value="CD">CD</option>
+          <option value="FD">FD</option>
+          </select>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+      {
+        data.type==='CD'?<ClassComponent CD={data.CD}/>:<FunctionalComponent1 FD={data.FD}/>
+      }
+    </>
   );
 }
 
