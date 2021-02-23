@@ -77,6 +77,11 @@ export default function SignUp() {
       })
     }).then(res=>res.json()).then(response=>{
       dispatch({
+        type: "SHOW-SNACK",
+        severity: "success",
+        payload: "User Created!!"
+      })
+      dispatch({
         type: "LOGIN",
         payload: response
       });

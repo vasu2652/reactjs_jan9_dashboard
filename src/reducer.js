@@ -11,21 +11,20 @@ export default function (state, action){
         case "LOGOUT":{
             return state;
         }
-        case "ERRORED":{
+        case "SHOW-SNACK":{
             return {
                 ...state,
-                error: true,
                 snackbarProps:{
                     ...state.snackbarProps,
                     open: true,
+                    severity: action.severity,
                     message: action.payload
                 }
             }
         }
-        case "CLEAR-ERROR":{
+        case "HIDE-SNACK":{
             return {
                 ...state,
-                error: false,
                 snackbarProps:{
                     ...state.snackbarProps,
                     open: false,

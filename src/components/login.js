@@ -63,10 +63,10 @@ export default function SignIn() {
   const validations=(element)=>{
     switch(element){
       case "name":{
-        return formdata.name.length<10?true:false;
+        return formdata.name.length<6?true:false;
       }
       case "password":{
-        return formdata.password.length<10?true:false;
+        return formdata.password.length<6?true:false;
       }
       default:{
         return false;
@@ -79,16 +79,26 @@ export default function SignIn() {
     fetch(encodeURI(`http://localhost:3001/users?name=${formdata.name}&password=${formdata.password}`)).then(res=>res.json()).then(user=>{
         if(user.length===1){
             dispatch({
+              type: "SHOW-SNACK",
+              severity: "success",
+              payload: "Login Successfull!!"
+            })
+            dispatch({
               type:"LOGIN",
               payload:user
             });
             setRedirect(true);
         }
         else{
-            setFormdata({
-                ...formdata,
-                password: ""
-            })
+          dispatch({
+            type: "SHOW-SNACK",
+            severity: "error",
+            payload: "Invalid Credentials"
+          })
+          setFormdata({
+              ...formdata,
+              password: ""
+          })
         }
     })
   }

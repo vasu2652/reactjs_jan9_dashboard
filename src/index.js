@@ -10,6 +10,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
+
 export const TopSnackBar = (props)=>{
   const {open, duration=5000, severity, message, handleClose, vertical="top", horizontal="center"} = props
   return (
@@ -20,6 +21,7 @@ export const TopSnackBar = (props)=>{
     </Snackbar>
   )
 }
+
 const App = ()=>{
   const globalStore = useContext(Store);
   //Array Destructuring ES6 -> Concept of JavaScript
@@ -30,7 +32,7 @@ const App = ()=>{
           <MainApp/>
           <TopSnackBar {...state.snackbarProps} handleClose={()=>{
             dispatch({
-              type: "CLEAR-ERROR"
+              type: "HIDE-SNACK"
             })
           }}/>
       </Router>
