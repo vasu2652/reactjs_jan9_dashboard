@@ -53,7 +53,7 @@ export default function SignUp() {
   const classes = useStyles();
   const { state, dispatch } = useContext(Store);
   const [formdata, setFormdata] = useState({
-    username:"",
+    name:"",
     email:"",
     age: 30,
     gender: "Male",
@@ -135,8 +135,8 @@ export default function SignUp() {
                 id="Username"
                 label="Username"
                 autoFocus
-                value={formdata.username}
-                onChange= {(e)=>handleChange(e,"username")}
+                value={formdata.name}
+                onChange= {(e)=>handleChange(e,"name")}
                 error = {validations("username")}
                 helperText = {validations("username")?"Minimum character length is 10":""}
               />
@@ -233,7 +233,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

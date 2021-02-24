@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function EditUser(props) {
-       const { handleChange, handleEdit, curUserValue  } = props;
+      const { handleChange, handleEdit, curUserValue } = props;
       const validations = (element)=>{
         switch(element){
           case "username": {

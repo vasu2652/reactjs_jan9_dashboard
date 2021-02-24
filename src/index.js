@@ -7,6 +7,8 @@ import './index.css';
 import MainApp from './App';
 import { Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
+import { usePersistedContext, usePersistedReducer } from "./usePersist";
+
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -23,9 +25,12 @@ export const TopSnackBar = (props)=>{
 }
 
 const App = ()=>{
-  const globalStore = useContext(Store);
-  //Array Destructuring ES6 -> Concept of JavaScript
-  const [state, dispatch]= useReducer(Reducer, globalStore);
+  
+  const globalStore = usePersistedContext(useContext(Store), "state");
+  const [state, dispatch] = usePersistedReducer(
+    useReducer(Reducer, globalStore),
+    "state"
+  );
   return (
     <Store.Provider value={{state, dispatch}}>
       <Router>        

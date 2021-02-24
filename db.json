@@ -1,40 +1,40 @@
 {
-    "users": [
-      {
-        "name": "Ironman",
-        "password": "racecar",
-        "age": "44",
-        "email": "ironman2@marvel.com",
-        "gender": "Male",
-        "role": "Admin",
-        "id": 1
-      },
-      {
-        "id": 2,
-        "name": "Captain America",
-        "password": "racecar",
-        "age": "35",
-        "email": "captainamerica@marvel.com",
-        "gender": "Male",
-        "role": "Admin"
-      },
-      {
-        "id": 3,
-        "name": "SpiderMan",
-        "password": "racecar",
-        "age": 23,
-        "email": "superhero@marvel.com",
-        "gender": "Male",
-        "role": "User"
-      },
-      {
-        "id": 4,
-        "name": "Hulk",
-        "password": "racecar",
-        "age": 23,
-        "email": "superhero@marvel.com",
-        "gender": "Male",
-        "role": "User"
-      }
-    ]
+  "users": [
+    {
+      "name": "Ironman",
+      "password": "racecar",
+      "age": "43",
+      "email": "ironman2@marvel.com",
+      "gender": "Male",
+      "role": "Admin",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Captain America",
+      "password": "racecar",
+      "age": "35",
+      "email": "captainamerica@marvel.com",
+      "gender": "Male",
+      "role": "Admin"
+    },
+    {
+      "id": 3,
+      "name": "SpiderMan",
+      "password": "racecar",
+      "age": 23,
+      "email": "superhero@marvel.com",
+      "gender": "Male",
+      "role": "User"
+    },
+    {
+      "id": "2021-02-24T02:26:37.086Z",
+      "name": "Bhanu",
+      "email": "bhanu@gmail.com",
+      "age": "100",
+      "gender": "Female",
+      "role": "Admin",
+      "password": "racecar"
+    }
+  ]
 }

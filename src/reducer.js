@@ -9,7 +9,10 @@ export default function (state, action){
             };
         }
         case "LOGOUT":{
-            return state;
+            return {
+                ...state,
+                user: null,
+            }
         }
         case "SHOW-SNACK":{
             return {

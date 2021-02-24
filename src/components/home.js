@@ -282,7 +282,7 @@ export default function EnhancedTable() {
     fetch(`http://localhost:3001/users`).then(res=>res.json()).then(data=>{
       setUsers(data);
     })
-  },[])
+  })
 
   useEffect(()=>{
     console.log("This will be called after every update")
